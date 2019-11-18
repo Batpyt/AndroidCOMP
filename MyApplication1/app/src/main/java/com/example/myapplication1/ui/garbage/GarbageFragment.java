@@ -1,4 +1,4 @@
-package com.example.myapplication1.ui.notifications;
+package com.example.myapplication1.ui.garbage;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,18 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.myapplication1.R;
 
-public class NotificationsFragment extends Fragment {
+public class GarbageFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private GarbageViewModel garbageViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(this, new Observer<String>() {
+                             ViewGroup container, Bundle savedInstanceState)
+    {
+        garbageViewModel =
+                ViewModelProviders.of(this).get(GarbageViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_garbage, container, false);
+        final TextView textView = root.findViewById(R.id.text_garbage);
+        garbageViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
